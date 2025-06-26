@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TaskNest</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="light">
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <h1><i class="fas fa-feather-alt"></i> TaskNest</h1>
+        <p class="tagline">Organize your day with elegance ✨</p>
+      </div>
+      <button id="themeToggle" class="theme-btn">
+        <span class="sun"><i class="fas fa-sun"></i></span>
+        <span class="moon"><i class="fas fa-moon"></i></span>
+      </button>
+    </header>
+
+    <nav class="main-nav">
+      <button class="nav-btn active" onclick="filterTasks('all')">
+        <i class="fas fa-tasks"></i> All Tasks
+      </button>
+      <button class="nav-btn" onclick="filterTasks('active')">
+        <i class="fas fa-list-ul"></i> Active
+      </button>
+      <button class="nav-btn" onclick="filterTasks('completed')">
+        <i class="fas fa-check-circle"></i> Completed
+      </button>
+    </nav>
+
+    <div class="input-section">
+      <div class="input-group">
+        <input type="text" id="taskInput" placeholder="What's your task?" />
+        <i class="fas fa-pen-fancy input-icon"></i>
+      </div>
+      <div class="input-group">
+        <input type="datetime-local" id="taskDate" />
+        <i class="far fa-calendar-alt input-icon"></i>
+      </div>
+      <div class="input-group">
+        <select id="taskPriority">
+          <option value="normal">Normal Priority</option>
+          <option value="important">Important!</option>
+          <option value="urgent">Urgent!!</option>
+        </select>
+        <i class="fas fa-exclamation input-icon"></i>
+      </div>
+      <button class="add-btn" onclick="addTask()">
+        <i class="fas fa-plus"></i> Add Task
+      </button>
+    </div>
+
+    <div id="taskList" class="task-list"></div>
+
+    <footer>
+      <div class="stats">
+        <span id="taskCount">0 tasks</span>
+        <span id="completedCount">0 completed</span>
+      </div>
+      <button class="clear-btn" onclick="clearAll()">
+        <i class="fas fa-trash-alt"></i> Clear All
+      </button>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
